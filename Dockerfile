@@ -70,6 +70,10 @@ RUN chmod 777 /var/run/celery
 RUN yum install -y bzip2
 #RUN wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
 
+# Install unrar
+ADD ./unrar-5.0.3-1.el7.rf.x86_64.rpm /
+RUN rpm -Uvh unrar-5.0.3-1.el7.rf.x86_64.rpm
+
 # adding an archive will automatically extract it
 ADD ./phantomjs-2.1.1-linux-x86_64.tar.bz2 /
 RUN mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/
