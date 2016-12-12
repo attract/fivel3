@@ -83,3 +83,4 @@ RUN mkdir -p /home/docker/code/media/pdf
 RUN chmod 777 /home/docker/code/media/pdf
 
 RUN pip install -r /home/docker/code/req.txt
+RUN localedef -i en_US -f UTF-8 en_US.UTF-8
