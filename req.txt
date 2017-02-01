@@ -69,3 +69,4 @@ git+git://github.com/gkuhn1/django-admin-multiupload.git
 # Configuration
 django-environ==0.4.0
 suds==0.4
+XlsxWriter==0.9.6
