@@ -74,6 +74,9 @@ RUN yum install -y bzip2
 ADD ./unrar-5.0.3-1.el7.rf.x86_64.rpm /
 RUN rpm -Uvh unrar-5.0.3-1.el7.rf.x86_64.rpm
 
+# Install 7zip
+RUN yum install -y p7zip p7zip-plugins
+
 # adding an archive will automatically extract it
 ADD ./phantomjs-2.1.1-linux-x86_64.tar.bz2 /
 RUN mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/
