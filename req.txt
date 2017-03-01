@@ -71,3 +71,6 @@ django-environ==0.4.0
 suds==0.4
 XlsxWriter==0.9.6
 pylzma==0.4.8
+djangorestframework==3.5.4
+markdown==2.6.8
+django-filter==1.0.1
