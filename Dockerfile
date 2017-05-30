@@ -21,9 +21,9 @@ RUN yum install -y libxml2-devel
 RUN yum install -y libxslt-devel
 RUN yum install -y gcc
 RUN yum install -y python-devel
-#RUN yum install -y mysql-devel
-#RUN yum install -y postgresql-libs
-#RUN yum install -y unixODBC
+RUN yum install -y mysql-devel
+RUN yum install -y postgresql-libs
+RUN yum install -y unixODBC
 
 RUN yum install -y libjpeg-devel
 RUN yum install -y git
@@ -48,14 +48,14 @@ RUN ln -s /home/docker/code/docker/conf/nginx-app.conf /etc/nginx/sites-enabled/
 RUN ln -s /home/docker/code/docker/conf/supervisor-app.conf /etc/supervisord.d/supervisor-app.ini
 
 ## install sphinx
-#RUN yum install -y wget
-#RUN yum install -y initscripts
-#RUN wget http://sphinxsearch.com/files/sphinx-2.2.10-1.rhel7.x86_64.rpm
-#RUN rpm -Uhv sphinx-2.2.10-1.rhel7.x86_64.rpm
-#RUN mkdir -p /opt/log/sphinx
-#RUN chmod 777 /opt/log/sphinx
-#RUN mkdir -p /var/lib/sphinx/data
-#RUN chmod 777 /var/lib/sphinx/data
+RUN yum install -y wget
+RUN yum install -y initscripts
+RUN wget http://sphinxsearch.com/files/sphinx-2.2.10-1.rhel7.x86_64.rpm
+RUN rpm -Uhv sphinx-2.2.10-1.rhel7.x86_64.rpm
+RUN mkdir -p /opt/log/sphinx
+RUN chmod 777 /opt/log/sphinx
+RUN mkdir -p /var/lib/sphinx/data
+RUN chmod 777 /var/lib/sphinx/data
 
 RUN mkdir /var/log/uwsgi/
 
