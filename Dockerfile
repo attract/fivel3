@@ -5,25 +5,21 @@ MAINTAINER AttractGroup
 RUN yum update -y && yum clean all
 RUN yum install -y yum-utils
 RUN yum-config-manager --enable cr
-RUN yum install -y epel-release
-RUN yum install -y python-pip
-RUN yum install -y python-setuptools
-RUN yum install -y nginx
-
-RUN yum install -y python-devel
-RUN yum install -y supervisor
-
-RUN yum install -y rabbitmq-server
-RUN yum install -y postgresql-devel
-RUN yum install -y openssl-devel
-RUN yum install -y libffi-devel
-RUN yum install -y libxml2-devel
-RUN yum install -y libxslt-devel
-RUN yum install -y gcc
-RUN yum install -y python-devel
-RUN yum install -y mysql-devel
-RUN yum install -y postgresql-libs
-RUN yum install -y unixODBC
+RUN yum install -y epel-release python-pip python-setuptools nginx \
+                    python-devel \
+                    supervisor \
+                    rabbitmq-server \
+                    mysql \
+                    postgresql-devel \
+                    openssl-devel \
+                    libffi-devel \
+                    libxml2-devel \
+                    libxslt-devel \
+                    gcc \
+                    python-devel \
+                    mysql-devel \
+                    postgresql-libs \
+                    unixODBC
 
 RUN yum install -y libjpeg-devel
 RUN yum install -y git
