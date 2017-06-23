@@ -5,7 +5,10 @@ MAINTAINER AttractGroup
 RUN yum update -y && yum clean all
 RUN yum install -y yum-utils
 RUN yum-config-manager --enable cr
-RUN yum install -y epel-release python-pip python-setuptools nginx \
+RUN yum install -y epel-release \
+                    python-pip \
+                    python-setuptools \
+                    nginx \
                     python-devel \
                     supervisor \
                     rabbitmq-server \
@@ -19,14 +22,12 @@ RUN yum install -y epel-release python-pip python-setuptools nginx \
                     python-devel \
                     mysql-devel \
                     postgresql-libs \
-                    unixODBC
+                    unixODBC \
+                    libjpeg-devel \
+                    git \
+                    cronie
 
-RUN yum install -y libjpeg-devel
-RUN yum install -y git
 RUN pip install uwsgi
-
-# Install Cron
-RUN yum install -y cronie
 
 # Set work directory
 ENV DIRPATH /home/docker/code/
