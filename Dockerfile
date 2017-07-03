@@ -51,8 +51,10 @@ RUN ln -s /home/docker/code/docker/conf/supervisor-app.conf /etc/supervisord.d/s
 ## install sphinx
 RUN yum install -y wget
 RUN yum install -y initscripts
-RUN wget http://sphinxsearch.com/files/sphinx-2.2.10-1.rhel7.x86_64.rpm
-RUN rpm -Uhv sphinx-2.2.10-1.rhel7.x86_64.rpm
+#RUN wget http://sphinxsearch.com/files/sphinx-2.2.10-1.rhel7.x86_64.rpm
+RUN wget http://sphinxsearch.com/files/sphinx-2.2.11-1.rhel7.x86_64.rpm
+#RUN rpm -Uhv sphinx-2.2.10-1.rhel7.x86_64.rpm
+RUN rpm -Uhv sphinx-2.2.11-1.rhel7.x86_64.rpm
 RUN mkdir -p /opt/log/sphinx
 RUN chmod 777 /opt/log/sphinx
 RUN mkdir -p /var/lib/sphinx/data
