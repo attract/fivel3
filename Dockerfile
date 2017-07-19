@@ -30,6 +30,13 @@ RUN yum install -y libjpeg-devel
 RUN yum install -y git
 RUN pip install uwsgi
 
+# FOR JS CSS MINIMIZER 1
+RUN yum install -y curl nodejs nodejs-legacy npm
+RUN npm install -g gulp
+
+COPY ./package.json /tmp/package.json
+RUN cd /tmp && npm install
+
 # Install Cron
 RUN yum install -y cronie
 
