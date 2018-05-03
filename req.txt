@@ -74,3 +74,4 @@ pylzma==0.4.8
 djangorestframework==3.5.4
 markdown==2.6.8
 django-filter==1.0.1
+dbfpy==2.3.1
