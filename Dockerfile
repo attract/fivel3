@@ -26,7 +26,7 @@ RUN yum install -y postgresql-libs
 RUN yum install -y unixODBC
 RUN yum install -y mysql
 # RUN yum install -y python-cffi
-
+RUN yum erase -y python-cffi
 RUN yum install -y libjpeg-devel
 RUN yum install -y git
 RUN pip install uwsgi
