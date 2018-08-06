@@ -37,7 +37,7 @@ RUN pip install uwsgi
 # RUN yum install -y curl nodejs nodejs-legacy npm
 RUN yum install -y curl
 RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash -
-RUN yum install -y nodejs npm
+RUN yum install -y nodejs # npm
 RUN npm install -g gulp
 
 COPY ./package.json /tmp/package.json
