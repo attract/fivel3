@@ -32,7 +32,12 @@ RUN yum install -y git
 RUN pip install uwsgi
 
 # FOR JS CSS MINIMIZER 1
-RUN yum install -y curl nodejs nodejs-legacy npm
+# curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+# yum install nodejs
+# RUN yum install -y curl nodejs nodejs-legacy npm
+RUN yum install -y curl
+RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+RUN yum install -y nodejs npm
 RUN npm install -g gulp
 
 COPY ./package.json /tmp/package.json
