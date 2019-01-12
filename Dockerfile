@@ -66,13 +66,28 @@ RUN ln -s /home/docker/code/docker/conf/supervisor-app.conf /etc/supervisord.d/s
 RUN yum install -y wget
 RUN yum install -y initscripts
 #RUN wget http://sphinxsearch.com/files/sphinx-2.2.10-1.rhel7.x86_64.rpm
-RUN wget http://sphinxsearch.com/files/sphinx-2.2.11-1.rhel7.x86_64.rpm
+# RUN wget http://sphinxsearch.com/files/sphinx-2.2.11-1.rhel7.x86_64.rpm
 #RUN rpm -Uhv sphinx-2.2.10-1.rhel7.x86_64.rpm
 RUN rpm -Uhv sphinx-2.2.11-1.rhel7.x86_64.rpm
+
+# NEW VERSION
+# http://sphinxsearch.com/docs/sphinx3.html#getting-started-on-linux-and-macos
+RUN wget -q http://sphinxsearch.com/files/sphinx-3.0.3-facc3fb-linux-amd64-glibc2.12.tar.gz -P /sphinx/
+RUN tar zxf /sphinx/sphinx-3.0.3-facc3fb-linux-amd64-glibc2.12.tar.gz
+
 RUN mkdir -p /opt/log/sphinx
 RUN chmod 777 /opt/log/sphinx
 RUN mkdir -p /var/lib/sphinx/data
 RUN chmod 777 /var/lib/sphinx/data
+
+# NEW VERSION
+# wget -q http://sphinxsearch.com/files/sphinx-3.0.3-facc3fb-linux-amd64-glibc2.12.tar.gz
+#
+# tar zxf sphinx-3.0.3-facc3fb-linux-amd64-glibc2.12.tar.gz
+#
+# cd sphinx-3.0.3/bin
+#
+# ./searchd
 
 RUN mkdir /var/log/uwsgi/
 
